@@ -1,7 +1,7 @@
 
 const initialState = {
     products: [],
-    product: [],
+    product: {},
     createProduct: [],
     cart: [],
 }
@@ -14,6 +14,9 @@ const storeReducer = (state = initialState, action) => {
 
         case "GET_DETAIL_PRODUCT":
             return {...state, product: action.payload}
+        
+        case "CLEAR_DETAIL_PRODUCT":
+            return {...state, product: {}}
 
         case "CREATE_PRODUCT":
             return { ...state, createProducts: action.payload };

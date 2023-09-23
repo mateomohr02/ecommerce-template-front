@@ -15,15 +15,17 @@ const Store = () => {
         dispatch(getProducts());
     }, [dispatch]);
 
+    console.log(products, 'PRODUCTOS');
+
     return (
-  <>
+  <div className='flex flex-row flex-wrap justify-center '>
     {
         products?.map(product => (
             <ProductCard
-            key={product.id}
+            id={product.id}
             image={product.image_path}
             name={product.name}
-            brand={product.brand}
+            brandName={product.brandName}
             description={product.description}
             price={product.price}
             
@@ -31,7 +33,7 @@ const Store = () => {
         ))
     }
   
-  </>
+  </div>
   )
 }
 

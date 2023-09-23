@@ -1,16 +1,14 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-import style from './ProductCard.module.css'
 
-const ProductCard = ({ id, name, brand, description, price, image}) => {
-
+const ProductCard = ({ id, name, brandName, price, image}) => {
   return (
-    <div className={style.container} key={id}>
-        <p>{`${name} - ${brand}`}</p>
-        <img className={style.image}src={image} alt={name} />
-        <p>{description}</p>
-        <p>$ {price}</p>
-    </div>
+    <Link to={`/store/${id}`} key={id} className='w-1/6 border border-slate-300 rounded-sm p-3 m-2 bg-slate-100 hover:bg-slate-200 duration-100' onClick={()=>{}}>
+        <img src={image} alt={name} className='rounded border my-1'/>
+        <p className='font-medium text-left font-sans text-lg antialiased'>{`${name}  ${brandName}`}</p>
+        <p className='font-normal text-left font-sans text-lg antialiased'>$ {price}</p>
+    </Link>
   )
 }
 

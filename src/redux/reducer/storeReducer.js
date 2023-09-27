@@ -4,6 +4,8 @@ const initialState = {
     product: {},
     createProduct: [],
     cart: [],
+    categories: [],
+    categoryProducts: []
 }
 
 const storeReducer = (state = initialState, action) => {
@@ -20,6 +22,15 @@ const storeReducer = (state = initialState, action) => {
 
         case "CREATE_PRODUCT":
             return { ...state, createProducts: action.payload };
+
+        case "GET_CATEGORIES":
+            return { ...state, categories: action.payload }
+
+        case "GET_CATEGORY_PRODUCTS":
+            return { ...state, categoryProducts: action.payload }
+        
+        case "CLEAR_CATEGORY_PRODUCTS":
+            return {...state, categoryProducts: []}
 
         default:
             return state;

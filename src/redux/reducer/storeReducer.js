@@ -5,7 +5,9 @@ const initialState = {
     createProduct: [],
     cart: [],
     categories: [],
-    categoryProducts: []
+    categoryProducts: [],
+    brands: [],
+    brandProducts: []
 }
 
 const storeReducer = (state = initialState, action) => {
@@ -31,6 +33,15 @@ const storeReducer = (state = initialState, action) => {
         
         case "CLEAR_CATEGORY_PRODUCTS":
             return {...state, categoryProducts: []}
+
+        case "GET_BRANDS":
+            return { ...state, brands: action.payload }
+
+        case "GET_BRAND_PRODUCTS":
+            return { ...state, brandProducts: action.payload }
+        
+        case "CLEAR_BRAND_PRODUCTS":
+            return {...state, brandProducts: []}
 
         default:
             return state;

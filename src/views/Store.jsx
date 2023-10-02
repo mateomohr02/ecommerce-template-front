@@ -19,19 +19,19 @@ const Store = () => {
 
     return (
   <div className='flex flex-row flex-wrap justify-center '>
-    {
-        products?.map(product => (
-            <ProductCard
-            id={product.id}
-            image={product.image_path}
-            name={product.name}
-            brandName={product.brandName}
-            description={product.description}
-            price={product.price}
-            
-            />
-        ))
-    }
+    {products?.map(product => (
+      product.show ? (
+        <ProductCard
+          key={product.id}  
+          id={product.id}
+          image={product.image_path}
+          name={product.name}
+          brandName={product.brandName}
+          description={product.description}
+          price={product.price}
+        />
+      ) : null
+    ))}
   
   </div>
   )

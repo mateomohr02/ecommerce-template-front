@@ -7,7 +7,9 @@ const initialState = {
     categories: [],
     categoryProducts: [],
     brands: [],
-    brandProducts: []
+    brandProducts: [],
+    updateBrand: false,
+    updateCategory: false 
 }
 
 const storeReducer = (state = initialState, action) => {
@@ -42,6 +44,18 @@ const storeReducer = (state = initialState, action) => {
         
         case "CLEAR_BRAND_PRODUCTS":
             return {...state, brandProducts: []}
+
+        case "UPDATE_CATEGORY_IMAGE":
+            return{...state, updateCategory: true}
+        
+        case "UPDATE_BRAND_IMAGE":
+            return{...state, updateBrand: true}
+
+        case "CLEAR_UPDATE_BRAND":
+            return{...state, updateBrand: false}
+        
+        case 'CLEAR_UPDATE_CATEGORY':
+            return{...state, updateCategory: false}
 
         default:
             return state;

@@ -1,10 +1,15 @@
 import React from 'react'
-import AdminProductAdder from '../components/AdminProductAdder/AdminProductAdder'
+import { Link } from 'react-router-dom'
+import ProductManager from '../components/Admin/ProductManager'
 
 const AdminDashboard = () => {
   return (
-    <>
-        <AdminProductAdder/>
+    <>  
+        <ProductManager/>
+
+        <Link to="/storeadmin/brand"> Administrar Marcas </Link>
+        <Link to="/storeadmin/category"> Administrar Categorías </Link>
+        <Link to="/storeadmin/add"> Agregar Productos </Link>
     </>
   )
 }

@@ -1,9 +1,9 @@
 import axios from 'axios';
 
-export const createProduct = (id, imgUrl) => {
+export const updateCategoryImage = (id, imgUrl) => {
     return async (dispatch) => {
         try {
-          const response = await axios.put(`/store/categories/${id}`, imgUrl);
+          const response = await axios.put(`/store/categories/${id}`, { imgUrl });
           const categoryUpdated = response.data;
     
           dispatch({ type: 'UPDATE_CATEGORY_IMAGE', payload: categoryUpdated });

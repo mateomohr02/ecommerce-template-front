@@ -9,9 +9,11 @@ import CategoryDetail from "./views/CategoryDetail";
 import Brands from "./views/Brands"
 import BrandDetail from "./views/BrandDetail"
 import AdminProductAdder from "./components/Admin/AdminProductAdder"
-import BrandEditor from "./components/Admin/BrandEditor";
 import ProductEditor from "./views/ProductEditor.jsx"
-
+import AdminBrands from "./views/AdminBrands";
+import AdminCategories from "./views/AdminCategories";
+import UserProfile from "./views/UserProfile";
+import RegisterLogin from "./views/RegisterLogin";
 
 
 function App() {
@@ -28,13 +30,20 @@ function App() {
         <Route exact path="/brands/:id" element={<BrandDetail/>}/>
         <Route exact path="/store" element={<Store />} />
         <Route exact path="/store/:id" element={<DetailProduct/>}/>
+        <Route exact path="/profile" element={<UserProfile/>}/>
+        <Route exact path="/access" element={<RegisterLogin/>}/>
+      
+
+
 
         {/* ROUTES FOR ADMINS */}
 
         <Route exact path="/storeadmin" element={<AdminDashboard />} />
-        <Route exact path="/storeadmin/add" element={<AdminProductAdder/>}/>
-        <Route exact path="/storeadmin/brand/editor/:id" element={<BrandEditor/>}/>
         <Route exact path="/storeadmin/modify/:id" element={<ProductEditor/>}/>
+        <Route exact path="/storeadmin/add" element={<AdminProductAdder/>}/>
+        <Route exact path="/storeadmin/brand" element={<AdminBrands/>}/>
+        <Route exact path="/storeadmin/categories" element={<AdminCategories/>}/>        
+  
       </Routes>
     </div>
   );

@@ -15,7 +15,7 @@ const Categories = () => {
   }, [dispatch])
 
   return (
-  <div>
+  <div className="p-16 flex justify-center">
     {
         categories?.map(cat => (
             <CategoryCard

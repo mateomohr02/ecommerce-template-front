@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { updateBrandImage } from '../../redux/actions/store/updateBrandImage'
+import { updateCategoryImage } from '../../redux/actions/store/updateCategoryImage'
 
-const BrandEditor = ( { id, onClose } ) => {
+const CategoryEditor = ( { id, onClose } ) => {
   
     const dispatch = useDispatch()
     
@@ -11,7 +11,7 @@ const BrandEditor = ( { id, onClose } ) => {
 
     const handleSubmit = async(e) => {
       e.preventDefault();
-      await dispatch(updateBrandImage(id, imgUrl))
+      await dispatch(updateCategoryImage(id, imgUrl))
       setIsClosed(true);
     }
 
@@ -40,4 +40,4 @@ const BrandEditor = ( { id, onClose } ) => {
     );
   };
 
-export default BrandEditor
+export default CategoryEditor

@@ -19,7 +19,7 @@ const Brands = () => {
 console.log(brands, 'BRANDS');
 
   return (
-    <div>
+    <div className="p-16 flex justify-center">
     {
         brands?.map(cat => (
             <BrandCard

@@ -42,7 +42,7 @@ const ProductManager = () => {
     <div>
       <table>
         <thead className='border border-black'>
-          <tr className=' bg-blue-200'>
+          <tr className=' bg-slate-200'>
           <th className='px-6 py-3 border border-black'> ID </th>
           <th className='px-32 py-3 border border-black'> Nombre </th>
           <th className='px-16 py-3 border border-black'> Marca </th>
@@ -50,14 +50,14 @@ const ProductManager = () => {
           <th className='px-12 py-3 border border-black'> Administrar </th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className='border-b border-black'>
           {localProducts.map(p => (
           <tr>
-            <td className='whitespace-no-wrap py-3'>{p.id}</td>
-            <td className='whitespace-no-wrap py-3'>{p.name}</td>
-            <td className='whitespace-no-wrap py-3'>{p.brandName}</td>
-            <td className='whitespace-no-wrap py-3'>$ {p.price}</td>
-            <td><Link to={`/storeadmin/modify/${p.id}`}> Modificar </Link> <button onClick={() => handleStatus(p.id)}>{ p.show ? " Pausar " : " Reanudar "}</button></td>
+            <td className='whitespace-no-wrap py-3 border-x border-black'>{p.id}</td>
+            <td className='whitespace-no-wrap py-3 border-x border-black'>{p.name}</td>
+            <td className='whitespace-no-wrap py-3 border-x border-black'>{p.brandName}</td>
+            <td className='whitespace-no-wrap py-3 border-x border-black'>$ {p.price}</td>
+            <td className='border-x border-black'><Link to={`/storeadmin/modify/${p.id}`}> Modificar </Link> <button onClick={() => handleStatus(p.id)}>{ p.show ? " Pausar " : " Reanudar "}</button></td>
           </tr>
           ))}
         </tbody>

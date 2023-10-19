@@ -9,6 +9,7 @@ export const login = (user) => {
                 
                 dispatch({type: "LOGIN", payload: response.data})
 
+                localStorage.setItem("role", response.data.user.role)
                 localStorage.setItem("loggedIn", "true");
                 localStorage.setItem("id", response.data.user.id);
                 localStorage.setItem("token", response.data.token);    
